@@ -1,0 +1,45 @@
+# Create a new attachment slot for the modification
+AttachmentSlots.UniversalFabricEnhancer1:
+    $type: gamedataAttachmentSlot_Record
+    customOffset: { X: 0.0, Y: 0,0, Z: 0,0 }
+    entitySlotName: UniversalFabricEnhancer1
+
+# Create a new inline for the modification
+Items.DLCUpgradeMod_inline0:
+    $type: gamedataSlotItemPartListElement_Record
+    itemPartList: [ Items.DLCItemMod_inline0 ]
+    slot: AttachmentSlots.UniversalFabricEnhancer1
+
+# WIP. Add the tooltip to the item
+Items.DLCItemsQualityUpgradeMod:
+    placementSlots: [ !append AttachmentSlots.UniversalFabricEnhancer1 ]
+    
+Items.Q001_Pants: &modifiers 
+    quality: Quality.Rare
+    sellPrice:
+        - !append-once Price.IconicMultiplier
+    statModifiers:
+        - !append-once Quality.IconicItem
+    slotPartList:
+        - Items.GenericRootSlotItem
+        - Items.DLCUpgradeMod_inline0
+    statModifierGroups:
+        - !append-once Items.DLCItemsQualityUpgrade
+    tags:
+        - !append-once DLCStashItem
+Items.Q001_Shoes: *modifiers
+Items.Q001_TShirt: *modifiers
+Items.Q005_Johnny_Glasses: *modifiers
+Items.Q005_Johnny_Pants: *modifiers
+Items.Q005_Johnny_Shirt: *modifiers
+Items.Q005_Johnny_Shoes: *modifiers
+Items.Q005_Steel_Dragons_Coat: *modifiers
+Items.Q005_Yorinobu_FormalPants: *modifiers
+Items.Q005_Yorinobu_FormalShirt: *modifiers
+Items.SQ004_RaffenShiv_Mask: *modifiers
+Items.SQ012_Shirt_VoteForPeralez: *modifiers
+Items.SQ029_River_Romance_Shirt: *modifiers
+Items.SQ030_MaxTac_Chest: *modifiers
+Items.SQ030_MaxTac_Helmet: *modifiers
+Items.SQ030_MaxTac_Pants: *modifiers
+Items.SQ031_Samurai_Jacket: *modifiers
