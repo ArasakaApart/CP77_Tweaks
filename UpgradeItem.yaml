@@ -5,6 +5,7 @@ AttachmentSlots.ItemUpgradeEnhancer:
     entitySlotName: ItemUpgradeEnhancer
 # Create a new modifier inline.
 Items.UpgradeItem_inline0:
+    $type: gamedataSlotItemPartListElement_Record
     itemPartList:
         - Items.DLCItemMod_inline0
     slot: AttachmentSlots.ItemUpgradeEnhancer
