@@ -9,6 +9,10 @@ Items.UpgradeItem_inline0:
     itemPartList:
         - Items.DLCItemMod_inline0
     slot: AttachmentSlots.ItemUpgradeEnhancer
+# Append to modification as viable slot
+Items.DLCItemsQualityUpgradeMod:
+    placementSlots: 
+        - !append-once AttachmentSlots.ItemUpgradeEnhancer
 # Define new modifiers to first item.
 Items.Q001_Pants: &newModifiers 
     quality: Quality.Rare
