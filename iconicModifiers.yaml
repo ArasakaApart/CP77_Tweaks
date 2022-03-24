@@ -1,3 +1,7 @@
+# Fix Media Boots drop location
+LootTables.Loot_ma_wbr_hil_102_inline0:
+    itemID: Items.Media_01_Set_Boots
+# Apply Iconic quality to more items.
 Items.Preset_Katana_GoG: &iconicModifier
     statModifiers:
         - !append-once Quality.IconicItem
