@@ -4,7 +4,7 @@ AttachmentSlots.ItemUpgradeEnhancer:
     customOffset: { X: 0.0, Y: 0,0, Z: 0,0 }
     entitySlotName: ItemUpgradeEnhancer
 # Create a new modifier inline.
-Items.UpgradeItem_inline0
+Items.UpgradeItem_inline0:
     itemPartList:
         - Items.DLCItemMod_inline0
     slot: AttachmentSlots.ItemUpgradeEnhancer
