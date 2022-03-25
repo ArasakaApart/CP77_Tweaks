@@ -1,0 +1,6 @@
+Items.w_melee_boss_hammer:
+    quality: Quality.Legendary
+    statModifiers:
+        - !append-once Items.Preset_Hammer_Sasquatch_inline0
+        - !append-once Quality.IconicItem
+        - !append-once Character.ScaleToPlayerLevel
