@@ -11,10 +11,10 @@ Items.UpgradeItem_inline0:
     slot: AttachmentSlots.ItemUpgradeEnhancer
 # Append to modification as viable slot
 Items.DLCItemsQualityUpgradeMod:
-    placementSlots: 
+    placementSlots:
         - !append-once AttachmentSlots.ItemUpgradeEnhancer
 # Define new modifiers to first item.
-Items.Q001_Pants: &newModifiers 
+Items.Q001_Pants: &newModifiers
     quality: Quality.Rare
     slotPartList:
         - !append-once Items.UpgradeItem_inline0
@@ -25,29 +25,28 @@ Items.Q001_Pants: &newModifiers
 # List of items being updated.
 Items.Q001_Shoes: *newModifiers
 Items.Q001_TShirt: *newModifiers
-#Items.Q005_Johnny_Glasses: *modifiers
-#Items.Q005_Johnny_Pants: *modifiers
-#Items.Q005_Johnny_Shirt: *modifiers
-#Items.Q005_Johnny_Shoes: *modifiers
-#Items.Q005_Steel_Dragons_Coat: *modifiers
-#Items.Q005_Yorinobu_FormalPants: *modifiers
-#Items.Q005_Yorinobu_FormalShirt: *modifiers
-#Items.SQ004_RaffenShiv_Mask: *modifiers
-#Items.SQ012_Shirt_VoteForPeralez: *modifiers
-#Items.SQ029_River_Romance_Shirt: *modifiers
-#Items.SQ030_MaxTac_Chest: *modifiers
-#Items.SQ030_MaxTac_Helmet: *modifiers
-#Items.SQ030_MaxTac_Pants: *modifiers
-#Items.SQ031_Samurai_Jacket: *modifiers
-
-# Create a new inline for the modification
-#Items.DLCUpgradeMod_inline0:
-#	$type: gamedataItemPartListElement_Record
-#	item: Items.DLCItemsQualityUpgradeMod
-#	weight: 1000.000000
-# Create a new item slot part for the modification
-#Items.DLCUpgradeMod:
-#   $type: gamedataSlotItemPartListElement_Record
-#   itemPartList: [ !append-once Items.DLCUpgradeMod_inline0 ]
-#	slot: AttachmentSlots.UniversalFabricEnhancer1
-# Add the attachmentslot to the placement slots of the modification
+Items.Q005_Johnny_Glasses: *newModifiers
+Items.Q005_Johnny_Pants: *newModifiers
+Items.Q005_Johnny_Shirt: *newModifiers
+Items.Q005_Johnny_Shoes: *newModifiers
+Items.Q005_Steel_Dragons_Coat: *newModifiers
+Items.Q005_Yorinobu_FormalPants: *newModifiers
+Items.Q005_Yorinobu_FormalShirt: *newModifiers
+Items.SQ004_RaffenShiv_Mask: *newModifiers
+Items.SQ012_Shirt_VoteForPeralez: *newModifiers
+Items.SQ029_River_Romance_Shirt: *newModifiers
+Items.SQ030_MaxTac_Chest: *newModifiers
+Items.SQ030_MaxTac_Helmet: *newModifiers
+Items.SQ030_MaxTac_Pants: *newModifiers
+Items.SQ031_Samurai_Jacket: *newModifiers
+Items.Q000_Corpo_FormalJacket: *newModifiers
+Items.Q000_Corpo_FormalPants: *newModifiers
+Items.Q000_Corpo_FormalShoes: *newModifiers
+Items.Q000_Nomad_Boots: *newModifiers
+Items.Q000_Nomad_noPatch_Vest: *newModifiers
+Items.Q000_Nomad_Pants: *newModifiers
+Items.Q000_Nomad_TShirt: *newModifiers
+Items.Q000_Nomad_Vest: *newModifiers
+Items.Q000_StreetKid_Pants: *newModifiers
+Items.Q000_StreetKid_Shoes: *newModifiers
+Items.Q000_StreetKid_TShirt: *newModifiers
