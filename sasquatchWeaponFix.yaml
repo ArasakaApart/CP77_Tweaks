@@ -6,8 +6,9 @@ Items.w_melee_boss_hammer:
     OnLooted:
         - Items.w_melee_boss_hammer_inline5
 # Add iconic modifier (WIP)
-#    slotPartListPreset:
-        #- Items.w_melee_boss_hammer_inline7
+    slotPartListPreset:
+        - Items.Preset_Hammer_Default_inline0
+        - Items.w_melee_boss_hammer_inline7
 # Makes the item Iconic
     statModifiers:
         - !append-once Quality.IconicItem
@@ -212,3 +213,91 @@ Items.w_melee_boss_hammer_Epic.hide_nametag: true
 Items.w_melee_boss_hammer_Epic.price: Items.w_melee_boss_hammer_inline0
 Items.w_melee_boss_hammer_Legendary.hide_nametag: true
 Items.w_melee_boss_hammer_Legendary: Items.w_melee_boss_hammer_inline0
+###### Iconic Mod #######
+# PLACEHOLDER
+# 
+# 
+# Create iconic melee mod item part preset record
+Items.w_melee_boss_hammer_inline7:
+    $type: gamedataSlotItemPartPreset_Record
+    itemPartPreset: Items.SasquatchHammerWeaponMod
+    slot: AttachmentSlots.IconicMeleeWeaponMod1
+# Create iconic melee mod item record
+Items.SasquatchHammerWeaponMod:
+    $type: gamedataItem_Record
+    buyPrice:
+        - Price.BasePrice
+        - Price.BuyMultiplier
+        - Price.ItemQualityMultiplier
+        - Price.IconicMultiplier
+        - Price.BuyPriceIntrinsicModMult
+        - Price.WeaponMod
+    CraftingData: Items.SimpleModCraftingData
+    iconPath: mod_generic
+    isPart: true
+    itemCategory: ItemCategory.Part
+    itemType: ItemType.Prt_Mod
+    minigameInstance: minigame_v2.DefaultItemMinigame
+    objectActions:
+        - ItemAction.Drop
+        - ItemAction.Disassemble
+    OnAttach: 
+        - Items.SasquatchHammerWeaponModAbility
+    placementSlots:
+        - AttachmentSlots.MeleeWeaponMod01
+        - AttachmentSlots.MeleeWeaponMod02
+        - AttachmentSlots.MeleeWeaponMod03
+    quality: Quality.Epic
+    sellPrice:
+        - Price.BasePrice
+        - Price.SellMultiplier
+        - Price.ItemQualitySellMultiplier
+        - Price.CraftingTraitMultiplier
+        - Price.IconicMultiplier
+        - Price.SellPriceIntrinsicModMult
+        - Price.WeaponMod
+        - Price.MeleeWeaponMod
+    statModifiersGroups:
+        - Items.QualityRandomization
+    statModifiers:
+        - Items.IconicMeleeWeaponModBase_inline0
+        - Items.IconicMeleeWeaponModBase_inline1
+        - Items.SasquatchHammerWeaponMod_inline0
+        - Items.SasquatchHammerWeaponMod_inline1
+    tags:
+        - itemPart
+        - WeaponMod
+        - MeleeMod
+# Create gameplay logic package record
+Items.SasquatchHammerWeaponModAbility:
+    $type: gamedataGameplayLogicPackage_Record
+    effecots: Items.SasquatchHammerWeaponModAbility_inline0
+    UIData: Items.SasquatchHammerWeaponModAbility_inline1
+# Create status effect to attack record
+Items.SasquatchHammerWeaponModAbility_inline0:
+    $type: gamedataAddStatusEffectToAttackEffector_Record
+    applicationChance: 0.500000
+    effectorClassName: AddStatusEffectToAttackEffector
+    isRandom: true
+    prereqRecord: Perks.IsAttackMelee
+    stacks: 1.000000
+    statusEffect: BaseStatusEffect.Stun
+# Create gameplay logic package UI data record
+Items.SasquatchHammerWeaponModAbility_inline1:
+    $type: gamedataGameplayLogicPackageUIData_Record
+    iconPath: ability_offensive
+    intValues:
+        - 50
+    localizedDescription: Attacks have a {int_0}% chance to Stun.
+# Create mod effector
+#Items.SasquatchHammerWeaponMod_inline0:
+#    $type: gamedataConstantStatModifier_Record
+#    modifierType: Additive
+#    statType: 
+#    value: 50
+#Items.SasquatchHammerWeaponMod_inline1:
+#    $type: 
+#    
+#  
+#   
+# BaseStatusEffect.Unconscious
