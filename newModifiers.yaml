@@ -6,7 +6,8 @@ AttachmentSlots.ItemUpgradeEnhancer:
 # Create a new modifier inline.
 Items.UpgradeMod_inline0:
     $type: gamedataSlotItemPartListElement_Record
-    itemPartPreset: Items.DLCItemsQualityUpgradeMod
+    itemPart: 
+        - Items.DLCItemsQualityUpgradeMod
 # Append to modification as viable slot
 Items.DLCItemsQualityUpgradeMod:
     placementSlots:
@@ -14,6 +15,8 @@ Items.DLCItemsQualityUpgradeMod:
 # Define new modifiers to first item.
 Items.Q001_Pants: &newModifiers
     quality: Quality.Rare
+    OnAttach:
+        - !append-once Items.DLCItemsQualityUpgradeMod_inline2
     statModifiers:
         - !append-once Quality.IconicItem
     slotPartList:
@@ -48,4 +51,6 @@ Items.Q000_Nomad_Vest: *newModifiers
 Items.Q000_StreetKid_Pants: *newModifiers
 Items.Q000_StreetKid_Shoes: *newModifiers
 Items.Q000_StreetKid_TShirt: *newModifiers
-Items.SamuraiWorldTour_TShirt: *newModifiers
+Items.SamuraiWorldTour_TShirt:
+    statModifiers:
+        - !append-once Quality.IconicItem

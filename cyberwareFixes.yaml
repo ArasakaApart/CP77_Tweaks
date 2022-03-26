@@ -1,0 +1,4 @@
+# Fix for NetWatch Netdriver Mk.5 targetting
+Items.DamageHacksAreaAbility_inline0:
+   modifierType: Additive
+   value: 3.00000

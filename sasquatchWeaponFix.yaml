@@ -1,6 +1,214 @@
+###### Updates to base Sasquatch's Hammer #######
 Items.w_melee_boss_hammer:
-    quality: Quality.Legendary
+# Changes the default item quality to Rare
+    quality: Quality.Rare
+# When the item is looted, also includes the Epic recipe
+    OnLooted:
+        - Items.w_melee_boss_hammer_inline5
+# Add iconic modifier (WIP)
+#    slotPartListPreset:
+        #- Items.w_melee_boss_hammer_inline7
+# Makes the item Iconic
     statModifiers:
-        - !append-once Items.Preset_Hammer_Sasquatch_inline0
         - !append-once Quality.IconicItem
-        - !append-once Character.ScaleToPlayerLevel
+# Add Epic recipe
+Items.w_melee_boss_hammer_inline5:
+    $type: gamedataGameplayLogicPackage_Record
+    items:
+        - Items.w_melee_boss_hammer_inline6
+# Add Epic recipe to inventory
+Items.w_melee_boss_hammer_inline6:
+    $type: gamedataInventoryItem_Record
+    item: Items.Recipe_w_melee_boss_hammer_Epic
+    quantity: 1
+###### Epic #######
+# Create lore friendly crafting spec requirement perk
+Items.w_melee_boss_hammer_Epic_inline0:
+    $type: gamedataPerkPrereq_Record
+    perk: Crafting_Area_06_Perk_3
+    prereqClassName: PerkPrereq
+# Create crafting spec required materials
+Items.w_melee_boss_hammer_Epic_inline1:
+    $type: gamedataCraftingPackage_Record
+    craftingExpModifier: 1.00000
+    craftingRecipe:
+        - Items.w_melee_boss_hammer_Epic_inline2
+        - Items.w_melee_boss_hammer_Epic_inline3
+        - Items.w_melee_boss_hammer_Epic_inline4
+        - Items.w_melee_boss_hammer_Epic_inline5
+        - Items.w_melee_boss_hammer_Epic_inline6
+    overcraftPenaltyModifier: 1.00000
+# Create required recipe materials
+Items.w_melee_boss_hammer_Epic_inline2:
+    $type: gamedataRecipeElement_Record
+    amount: 1
+    ingredient: Items.w_melee_boss_hammer
+Items.w_melee_boss_hammer_Epic_inline3:
+    $type: gamedataRecipeElement_Record
+    amount: 35
+    ingredient: Items.UncommonMaterial1
+Items.w_melee_boss_hammer_Epic_inline4:
+    $type: gamedataRecipeElement_Record
+    amount: 30
+    ingredient: Items.RareMaterial1
+Items.w_melee_boss_hammer_Epic_inline5:
+    $type: gamedataRecipeElement_Record
+    amount: 35
+    ingredient: Items.EpicMaterial1
+Items.w_melee_boss_hammer_Epic_inline6:
+    $type: gamedataRecipeElement_Record
+    amount: 2
+    ingredient: Items.LegendaryMaterial1
+# Create Epic variant of Sasquatch's Hammer
+Items.w_melee_boss_hammer_Epic:
+    $base: Items.w_melee_boss_hammer
+    OnLooted:
+        - Items.w_melee_boss_hammer_Epic_inline7
+    CraftingData: Items.w_melee_boss_hammer_Epic_inline1
+    equipPrereqs: Items.w_melee_boss_hammer_Epic_inline0
+    quality: Quality.Epic
+#    slotPartListPrest:
+#        - Items.w_melee_boss_hammer_inline7
+    statModifiers:
+        - !append-once Quality.IconicItem
+#        - !append-once Items.w_melee_boss_hammer_Epic_inline8
+#        - !append-once Items.w_melee_boss_hammer_Epic_inline9
+Items.Recipe_w_melee_boss_hammer_Epic:
+    $type: gamedataItemRecipe_Record
+    animFeatureName: ItemData
+    animName: ui_garment_pose
+    buyPrice:
+        - Price.BasePrice
+        - Price.BuyMultiplier
+        - Price.ItemQualityMultiplier
+        - Price.IconicMultiplier
+        - Price.BuyPriceIntrinsicModMult
+        - Price.Recipe
+    craftingResult: Items.Recipe_w_melee_boss_hammer_Epic_inline0
+    gameplayRestrictions:
+        - GameplayRestriction.VehicleCombatNoInterruptions
+    icon: UIIcon.ItemIcon
+    isSingleInstance: true
+    itemType: ItemType.Gen_Misc
+    mass: 1.000000
+    minigameInstance: minigame_v2.DefaultItemMinigame
+    quality: Quality.Common
+    objectActions:
+        - ItemAction.Drop
+        - ItemAction.Disassemble
+    sellPrice:
+        - Price.BasePrice
+        - Price.SellMultiplier
+        - Price.ItemQualitySellMultiplier
+        - Price.CraftingTraitMultiplier
+        - Price.IconicMultiplier
+        - Price.SellPriceIntrinsicModMult
+        - Price.Recipe
+    tags:
+        - Recipe
+        - SkipActivityLogOnRemove
+# Create new recipe Epic inline 
+Items.Recipe_w_melee_boss_hammer_Epic_inline0:
+    $type: gamedataCraftingResult_Record
+    amount: 1
+    item: Items.w_melee_boss_hammer_Epic
+# Add Legendary recipe
+Items.w_melee_boss_hammer_Epic_inline7:
+    $type: gamedataGameplayLogicPackage_Record
+    items:
+        - Items.w_melee_boss_hammer_Epic_inline8
+# Add Legendary recipe to inventory
+Items.w_melee_boss_hammer_Epic_inline8:
+    $type: gamedataInventoryItem_Record
+    item: Items.Recipe_w_melee_boss_hammer_Legendary
+    quantity: 1
+####### Legendary #######
+# Create lore friendly crafting spec requirement perk
+Items.w_melee_boss_hammer_Legendary_inline0:
+    $type: gamedataPerkPrereq_Record
+    perk: Crafting_Area_09_Perk_1
+    prereqClassName: PerkPrereq
+# Create crafting spec required materials
+Items.w_melee_boss_hammer_Legendary_inline1:
+    $type: gamedataCraftingPackage_Record
+    craftingExpModifier: 1.00000
+    craftingRecipe:
+        - Items.w_melee_boss_hammer_Legendary_inline2
+        - Items.w_melee_boss_hammer_Legendary_inline3
+        - Items.w_melee_boss_hammer_Legendary_inline4
+        - Items.w_melee_boss_hammer_Legendary_inline5
+    overcraftPenaltyModifier: 1.00000
+# Create required recipe materials
+Items.w_melee_boss_hammer_Legendary_inline2:
+    $type: gamedataRecipeElement_Record
+    amount: 1
+    ingredient: Items.w_melee_boss_hammer_Epic
+Items.w_melee_boss_hammer_Legendary_inline3:
+    $type: gamedataRecipeElement_Record
+    amount: 45
+    ingredient: Items.RareMaterial1
+Items.w_melee_boss_hammer_Legendary_inline4:
+    $type: gamedataRecipeElement_Record
+    amount: 40
+    ingredient: Items.EpicMaterial1
+Items.w_melee_boss_hammer_Legendary_inline5:
+    $type: gamedataRecipeElement_Record
+    amount: 10
+    ingredient: Items.LegendaryMaterial1
+# Create Legendary variant of Sasquatch's Hammer
+Items.w_melee_boss_hammer_Legendary:
+    $base: Items.w_melee_boss_hammer
+#   OnLooted: 
+    CraftingData: Items.w_melee_boss_hammer_Legendary_inline1
+    equipPrereqs: Items.w_melee_boss_hammer_Legendary_inline0
+    quality: Quality.Legendary
+#    slotPartListPrest:
+#        - Items.w_melee_boss_hammer_inline7
+    statModifiers:
+        - !append-once Quality.IconicItem
+#        - !append-once Items.w_melee_boss_hammer_Legendary_inline8
+#        - !append-once Items.w_melee_boss_hammer_Legendary_inline9
+Items.Recipe_w_melee_boss_hammer_Legendary:
+    $type: gamedataItemRecipe_Record
+    animFeatureName: ItemData
+    animName: ui_garment_pose
+    buyPrice:
+        - Price.BasePrice
+        - Price.BuyMultiplier
+        - Price.ItemQualityMultiplier
+        - Price.IconicMultiplier
+        - Price.BuyPriceIntrinsicModMult
+        - Price.Recipe
+    craftingResult: Items.Recipe_w_melee_boss_hammer_Legendary_inline0
+    gameplayRestrictions:
+        - GameplayRestriction.VehicleCombatNoInterruptions
+    icon: UIIcon.ItemIcon
+    isSingleInstance: true
+    itemType: ItemType.Gen_Misc
+    mass: 1.000000
+    minigameInstance: minigame_v2.DefaultItemMinigame
+    quality: Quality.Common
+    objectActions:
+        - ItemAction.Drop
+        - ItemAction.Disassemble
+    sellPrice:
+        - Price.BasePrice
+        - Price.SellMultiplier
+        - Price.ItemQualitySellMultiplier
+        - Price.CraftingTraitMultiplier
+        - Price.IconicMultiplier
+        - Price.SellPriceIntrinsicModMult
+        - Price.Recipe
+    tags:
+        - Recipe
+        - SkipActivityLogOnRemove
+# Create new recipe Legendary inline 
+Items.Recipe_w_melee_boss_hammer_Legendary_inline0:
+    $type: gamedataCraftingResult_Record
+    amount: 1
+    item: Items.w_melee_boss_hammer_Legendary
+####### Flats #######  
+Items.w_melee_boss_hammer_Epic.hide_nametag: true
+Items.w_melee_boss_hammer_Epic.price: Items.w_melee_boss_hammer_inline0
+Items.w_melee_boss_hammer_Legendary.hide_nametag: true
+Items.w_melee_boss_hammer_Legendary: Items.w_melee_boss_hammer_inline0
