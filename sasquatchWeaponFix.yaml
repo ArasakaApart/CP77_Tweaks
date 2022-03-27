@@ -66,14 +66,14 @@ Items.w_melee_boss_hammer_Epic:
     OnLooted:
         - Items.w_melee_boss_hammer_Epic_inline7
     CraftingData: Items.w_melee_boss_hammer_Epic_inline1
-    equipPrereqs: Items.w_melee_boss_hammer_Epic_inline0
+    equipPrereqs: 
+        - Items.w_melee_boss_hammer_Epic_inline0
     quality: Quality.Epic
-    slotPartListPrest:
-        - Items.w_melee_boss_hammer_inline7
+#    slotPartListPreset:
+#        - Items.Preset_Hammer_Default_inline0
+#        - Items.w_melee_boss_hammer_inline7
     statModifiers:
         - !append-once Quality.IconicItem
-#        - !append-once Items.w_melee_boss_hammer_Epic_inline8
-#        - !append-once Items.w_melee_boss_hammer_Epic_inline9
 Items.Recipe_w_melee_boss_hammer_Epic:
     $type: gamedataItemRecipe_Record
     animFeatureName: ItemData
@@ -161,16 +161,17 @@ Items.w_melee_boss_hammer_Legendary:
     $base: Items.w_melee_boss_hammer
 #   OnLooted: 
     CraftingData: Items.w_melee_boss_hammer_Legendary_inline1
-    equipPrereqs: Items.w_melee_boss_hammer_Legendary_inline0
+    equipPrereqs: 
+        - Items.w_melee_boss_hammer_Legendary_inline0
     quality: Quality.Legendary
-    slotPartListPrest:
-        - Items.w_melee_boss_hammer_inline7
+#   slotPartListPreset:
+#         - Items.Preset_Hammer_Default_inline0
+#        - Items.w_melee_boss_hammer_inline7
     statModifiers:
         - !append-once Quality.IconicItem
-#        - !append-once Items.w_melee_boss_hammer_Legendary_inline8
-#        - !append-once Items.w_melee_boss_hammer_Legendary_inline9
 Items.Recipe_w_melee_boss_hammer_Legendary:
     $type: gamedataItemRecipe_Record
+#    $base: Items.Recipe_w_melee_boss_hammer_Epic
     animFeatureName: ItemData
     animName: ui_garment_pose
     buyPrice:
@@ -210,13 +211,11 @@ Items.Recipe_w_melee_boss_hammer_Legendary_inline0:
     item: Items.w_melee_boss_hammer_Legendary
 ####### Flats #######  
 Items.w_melee_boss_hammer_Epic.hide_nametag: true
-Items.w_melee_boss_hammer_Epic.price: Items.w_melee_boss_hammer_inline0
+Items.w_melee_boss_hammer_Epic.price: t"Items.w_melee_boss_hammer_inline0"
 Items.w_melee_boss_hammer_Legendary.hide_nametag: true
-Items.w_melee_boss_hammer_Legendary: Items.w_melee_boss_hammer_inline0
+Items.w_melee_boss_hammer_Legendary.price: t"Items.w_melee_boss_hammer_inline0"
 ###### Iconic Mod #######
-# PLACEHOLDER
-# 
-# 
+# Melee attacks have a 50% chance to Stun.
 # Create iconic melee mod item part preset record
 Items.w_melee_boss_hammer_inline7:
     $type: gamedataSlotItemPartPreset_Record
@@ -257,7 +256,7 @@ Items.SasquatchHammerWeaponMod:
         - Price.SellPriceIntrinsicModMult
         - Price.WeaponMod
         - Price.MeleeWeaponMod
-    statModifiersGroups:
+    statModifierGroups:
         - Items.QualityRandomization
     statModifiers:
         - Items.IconicMeleeWeaponModBase_inline0
