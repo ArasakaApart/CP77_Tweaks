@@ -6,8 +6,9 @@ AttachmentSlots.ItemUpgradeEnhancer:
 # Create a new modifier inline.
 Items.UpgradeMod_inline0:
     $type: gamedataSlotItemPartListElement_Record
-    itemPart: 
+    itemPartList: 
         - Items.DLCItemsQualityUpgradeMod
+    slot: AttachmentSlots.ItemUpgradeEnhancer
 # Append to modification as viable slot
 Items.DLCItemsQualityUpgradeMod:
     placementSlots:
@@ -17,30 +18,37 @@ Items.Q001_Pants: &newModifiers
     quality: Quality.Rare
     OnAttach:
         - !append-once Items.DLCItemsQualityUpgradeMod_inline2
-    statModifiers:
-        - !append-once Quality.IconicItem
     slotPartList:
         - !append-once Items.UpgradeMod_inline0
     statModifierGroups:
         - !append-once Items.DLCItemsQualityUpgrade
-# List of items being updated.
+    statModifiers:
+        - !append-once Quality.IconicItem
+# Main Quest Items
 Items.Q001_Shoes: *newModifiers
 Items.Q001_TShirt: *newModifiers
-Items.Q005_Johnny_Glasses: *newModifiers
-Items.Q005_Johnny_Pants: *newModifiers
-Items.Q005_Johnny_Shirt: *newModifiers
-Items.Q005_Johnny_Shoes: *newModifiers
 Items.Q005_Steel_Dragons_Coat: *newModifiers
 Items.Q005_Yorinobu_FormalPants: *newModifiers
 Items.Q005_Yorinobu_FormalShirt: *newModifiers
+Items.Q114_Aldecaldo_Jacket: 
+    statModifiers:
+        - !append-once Quality.IconicItem
+Items.Q115_Custom_Predator_Armor: 
+    statModifiers:
+        - !append-once Quality.IconicItem
+Items.Q115_Custom_Predator_Boots: 
+    statModifiers:
+        - !append-once Quality.IconicItem
+# Side Quest Clothing
 Items.SQ004_RaffenShiv_Mask: *newModifiers
 Items.SQ012_Shirt_VoteForPeralez: *newModifiers
 Items.SQ029_River_Romance_Shirt: *newModifiers
 Items.SQ030_MaxTac_Chest: *newModifiers
 Items.SQ030_MaxTac_Helmet: *newModifiers
 Items.SQ030_MaxTac_Pants: *newModifiers
-Items.SQ031_Samurai_Jacket: *newModifiers
+# Prologue Clothing
 Items.Q000_Corpo_FormalJacket: *newModifiers
+Items.Q000_Corpo_FormalJacket2: *newModifiers
 Items.Q000_Corpo_FormalPants: *newModifiers
 Items.Q000_Corpo_FormalShoes: *newModifiers
 Items.Q000_Nomad_Boots: *newModifiers
@@ -51,6 +59,6 @@ Items.Q000_Nomad_Vest: *newModifiers
 Items.Q000_StreetKid_Pants: *newModifiers
 Items.Q000_StreetKid_Shoes: *newModifiers
 Items.Q000_StreetKid_TShirt: *newModifiers
-Items.SamuraiWorldTour_TShirt:
-    statModifiers:
-        - !append-once Quality.IconicItem
+# Minor Quest Clothing
+Items.MQ017_Samerai_Jacket: *newModifiers
+Items.mq017_SameraiJacket: *newModifiers

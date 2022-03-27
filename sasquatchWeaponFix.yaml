@@ -170,40 +170,8 @@ Items.w_melee_boss_hammer_Legendary:
     statModifiers:
         - !append-once Quality.IconicItem
 Items.Recipe_w_melee_boss_hammer_Legendary:
-    $type: gamedataItemRecipe_Record
-#    $base: Items.Recipe_w_melee_boss_hammer_Epic
-    animFeatureName: ItemData
-    animName: ui_garment_pose
-    buyPrice:
-        - Price.BasePrice
-        - Price.BuyMultiplier
-        - Price.ItemQualityMultiplier
-        - Price.IconicMultiplier
-        - Price.BuyPriceIntrinsicModMult
-        - Price.Recipe
+    $base: Items.Recipe_w_melee_boss_hammer_Epic
     craftingResult: Items.Recipe_w_melee_boss_hammer_Legendary_inline0
-    gameplayRestrictions:
-       - GameplayRestriction.VehicleCombatNoInterruptions
-    icon: UIIcon.ItemIcon
-    isSingleInstance: true
-    itemType: ItemType.Gen_Misc
-    mass: 1.000000
-    minigameInstance: minigame_v2.DefaultItemMinigame
-    quality: Quality.Common
-    objectActions:
-        - ItemAction.Drop
-        - ItemAction.Disassemble
-    sellPrice:
-        - Price.BasePrice
-        - Price.SellMultiplier
-        - Price.ItemQualitySellMultiplier
-        - Price.CraftingTraitMultiplier
-        - Price.IconicMultiplier
-        - Price.SellPriceIntrinsicModMult
-        - Price.Recipe
-    tags:
-        - Recipe
-        - SkipActivityLogOnRemove
 # Create new recipe Legendary inline 
 Items.Recipe_w_melee_boss_hammer_Legendary_inline0:
     $type: gamedataCraftingResult_Record
@@ -215,7 +183,7 @@ Items.w_melee_boss_hammer_Epic.price: t"Items.w_melee_boss_hammer_inline0"
 Items.w_melee_boss_hammer_Legendary.hide_nametag: true
 Items.w_melee_boss_hammer_Legendary.price: t"Items.w_melee_boss_hammer_inline0"
 ###### Iconic Mod #######
-# Melee attacks have a 50% chance to Stun.
+# Melee attacks have a 30% chance to Stun.
 # Create iconic melee mod item part preset record
 Items.w_melee_boss_hammer_inline7:
     $type: gamedataSlotItemPartPreset_Record

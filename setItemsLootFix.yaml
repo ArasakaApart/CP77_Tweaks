@@ -1,6 +1,6 @@
 # Fix Media Boots drop by replacing the duplicate Media Legs in Charter Hill, Westbrook
 LootTables.Loot_ma_wbr_hil_102_inline0:
-    itemID: Items.Media_01_Set_Boots
+    itemID: Items.Media_01_Set_Shoes
 # Fix Nomad Pants drop
 LootTables.Loot_ma_bls_ina_se5_35:
     maxItemsToLoot: 4
