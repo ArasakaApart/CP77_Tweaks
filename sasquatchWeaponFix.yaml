@@ -68,8 +68,8 @@ Items.w_melee_boss_hammer_Epic:
     CraftingData: Items.w_melee_boss_hammer_Epic_inline1
     equipPrereqs: Items.w_melee_boss_hammer_Epic_inline0
     quality: Quality.Epic
-#    slotPartListPrest:
-#        - Items.w_melee_boss_hammer_inline7
+    slotPartListPrest:
+        - Items.w_melee_boss_hammer_inline7
     statModifiers:
         - !append-once Quality.IconicItem
 #        - !append-once Items.w_melee_boss_hammer_Epic_inline8
@@ -163,8 +163,8 @@ Items.w_melee_boss_hammer_Legendary:
     CraftingData: Items.w_melee_boss_hammer_Legendary_inline1
     equipPrereqs: Items.w_melee_boss_hammer_Legendary_inline0
     quality: Quality.Legendary
-#    slotPartListPrest:
-#        - Items.w_melee_boss_hammer_inline7
+    slotPartListPrest:
+        - Items.w_melee_boss_hammer_inline7
     statModifiers:
         - !append-once Quality.IconicItem
 #        - !append-once Items.w_melee_boss_hammer_Legendary_inline8
@@ -182,7 +182,7 @@ Items.Recipe_w_melee_boss_hammer_Legendary:
         - Price.Recipe
     craftingResult: Items.Recipe_w_melee_boss_hammer_Legendary_inline0
     gameplayRestrictions:
-        - GameplayRestriction.VehicleCombatNoInterruptions
+       - GameplayRestriction.VehicleCombatNoInterruptions
     icon: UIIcon.ItemIcon
     isSingleInstance: true
     itemType: ItemType.Gen_Misc
@@ -271,33 +271,24 @@ Items.SasquatchHammerWeaponMod:
 # Create gameplay logic package record
 Items.SasquatchHammerWeaponModAbility:
     $type: gamedataGameplayLogicPackage_Record
-    effecots: Items.SasquatchHammerWeaponModAbility_inline0
+    effectors: 
+        - Items.SasquatchHammerWeaponModAbility_inline0
     UIData: Items.SasquatchHammerWeaponModAbility_inline1
 # Create status effect to attack record
 Items.SasquatchHammerWeaponModAbility_inline0:
     $type: gamedataAddStatusEffectToAttackEffector_Record
-    applicationChance: 0.500000
+    applicationChance: 0.300000
     effectorClassName: AddStatusEffectToAttackEffector
     isRandom: true
     prereqRecord: Perks.IsAttackMelee
     stacks: 1.000000
-    statusEffect: BaseStatusEffect.Stun
+    statusEffect: BaseStatusEffect.MeleePerkStun
 # Create gameplay logic package UI data record
 Items.SasquatchHammerWeaponModAbility_inline1:
     $type: gamedataGameplayLogicPackageUIData_Record
+    floatValues:
+        - 30.000000
+        - 50.000000
+        - 70.000000
     iconPath: ability_offensive
-    intValues:
-        - 50
-    localizedDescription: Attacks have a {int_0}% chance to Stun.
-# Create mod effector
-#Items.SasquatchHammerWeaponMod_inline0:
-#    $type: gamedataConstantStatModifier_Record
-#    modifierType: Additive
-#    statType: 
-#    value: 50
-#Items.SasquatchHammerWeaponMod_inline1:
-#    $type: 
-#    
-#  
-#   
-# BaseStatusEffect.Unconscious
+    localizedDescription: Attacks have a {float_0}% chance to Stun.
