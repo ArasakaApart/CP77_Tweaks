@@ -1,0 +1,106 @@
+### Restore Crafting Specs - by Apart ###
+# Create new Recipe Element Records
+Items.Apart_RangedWeaponMod_inline5:
+    $type: gamedataRecipeElement_Record
+    amount: 12
+    ingredient: Items.CommonMaterial1
+Items.Apart_RangedWeaponMod_inline6:
+    $type: gamedataRecipeElement_Record
+    amount: 8
+    ingredient: Items.UncommonMaterial1
+Items.Apart_RangedWeaponMod_inline7:
+    $type: gamedataRecipeElement_Record
+    amount: 5
+    ingredient: Items.RareMaterial1
+Items.Apart_RangedWeaponMod_inline8:
+    $type: gamedataRecipeElement_Record
+    amount: 3
+    ingredient: Items.EpicMaterial1
+Items.Apart_RangedWeaponMod_inline9:
+    $type: gamedataRecipeElement_Record
+    amount: 2
+    ingredient: Items.LegendaryMaterial1
+### Neon Arrow
+# Create Crafting Result Record
+Items.Apart_Recipe_TygerRangedWeaponMod_inline0:
+    $type: gamedataCraftingResult_Record
+    amount: 1
+    item: Items.TygerRangedWeaponMod
+# Create Item Recipe Record
+Items.Apart_Recipe_TygerRangedWeaponMod:
+    $base: Items.Recipe_SimpleWeaponMod04
+    craftingResult: Items.Apart_Recipe_TygerRangedWeaponMod_inline0
+    displayName: LocKey(45267)
+# Update Crafting Package Record
+Items.TygerRangedWeaponMod_inline4:
+    craftingRecipe:
+        - Items.Apart_RangedWeaponMod_inline5
+        - Items.Apart_RangedWeaponMod_inline6
+        - Items.Apart_RangedWeaponMod_inline7
+# Create new vendor inline (Japantown)
+Vendors.Apart_TygerRangedWeaponMod_inline0:
+    $type: gamedataVendorItem_Record
+    forceQuality: Rare
+    item: Items.Apart_Recipe_TygerRangedWeaponMod
+    quantity:
+        - Vendors.CanBePresent
+# Add to Weapon Vendor in Japantown, Westbrook
+Vendors.wbr_jpn_gunsmith_01:
+    itemStock:
+        - !append-once Vendors.Apart_TygerRangedWeaponMod_inline0
+### Phantom
+# Create Crafting Result Record
+Items.Apart_Recipe_WraithsRangedWeaponMod_inline0:
+    $type: gamedataCraftingResult_Record
+    amount: 1
+    item: Items.WraithsRangedWeaponMod
+# Create Item Recipe Record
+Items.Apart_Recipe_WraithsRangedWeaponMod:
+    $base: Items.Recipe_SimpleWeaponMod04
+    craftingResult: Items.Apart_Recipe_WraithsRangedWeaponMod_inline0
+    displayName: LocKey(45265)
+# Update Crafting Package Record
+Items.WraithsRangedWeaponMod_inline3:
+    craftingRecipe:
+        - Items.Apart_RangedWeaponMod_inline5
+        - Items.Apart_RangedWeaponMod_inline6
+        - Items.Apart_RangedWeaponMod_inline7
+# Create new vendor inline (Japantown)
+Vendors.Apart_WraithsRangedWeaponMod_inline0:
+    $type: gamedataVendorItem_Record
+    forceQuality: Rare
+    item: Items.Apart_Recipe_WraithsRangedWeaponMod
+    quantity:
+        - Vendors.CanBePresent
+# Add to Weapon Vendor at Sunset Motel in Red Peaks, the Badlands
+Vendors.bls_ina_se1_gunsmith_02:
+    itemStock:
+        - !append-once Vendors.Apart_WraithsRangedWeaponMod_inline0
+### Vendetta
+# Create Crafting Result Record
+Items.Apart_Recipe_ValentinosRangedWeaponMod_inline0:
+    $type: gamedataCraftingResult_Record
+    amount: 1
+    item: Items.ValentinosRangedWeaponMod
+# Create Item Recipe Record
+Items.Apart_Recipe_ValentinosRangedWeaponMod:
+    $base: Items.Recipe_SimpleWeaponMod04
+    craftingResult: Items.Apart_Recipe_ValentinosRangedWeaponMod_inline0
+    displayName: LocKey(45269)
+# Update Crafting Package Record
+Items.ValentinosRangedWeaponMod_inline3:
+    craftingRecipe:
+        - Items.Apart_RangedWeaponMod_inline5
+        - Items.Apart_RangedWeaponMod_inline6
+        - Items.Apart_RangedWeaponMod_inline7
+# Create new vendor inline (Japantown)
+Vendors.Apart_ValentinosRangedWeaponMod_inline0:
+    $type: gamedataVendorItem_Record
+    forceQuality: Rare
+    item: Items.Apart_Recipe_ValentinosRangedWeaponMod
+    quantity:
+        - Vendors.CanBePresent
+# Add to Weapon Vendor at Coyoacan in The Glen
+Vendors.hey_gle_gunsmith_01:
+    itemStock:
+        - !append-once Vendors.Apart_ValentinosRangedWeaponMod_inline0
