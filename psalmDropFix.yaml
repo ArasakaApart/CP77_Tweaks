@@ -1,0 +1,12 @@
+# Default loot table record (overwriting)
+Character.ma_wat_nid_02_outpost_miniboss:
+    lootDrop: LootTables.ma_wat_nid_02_shard_loot_table
+# Fix loot table inclusions
+LootTables.ma_wat_nid_02_shard_loot_table:
+    lootGenerationType: dropChance
+    lootItems:
+        - LootTables.ma_wat_nid_02_onscreen
+    lootTableInclusions:
+        - LootTables.Loot_ma_wat_nid_02
+    maxItemsToLoot: 5 # Changed from 4 to 5
+    minItemsToLoot: 5 # Changed from 4 to 5
