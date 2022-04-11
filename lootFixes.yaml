@@ -1,3 +1,4 @@
+# Fix incorrect rarities
 LootTables.Q103_town_LCM_toolbox_inline2: &rarityFixQ103
     quality: Quality.Rare
 LootTables.Q103_town_LCM_toolbox_inline4: *rarityFixQ103
@@ -5,3 +6,6 @@ LootTables.Q103_town_LCM_toolbox_inline6: *rarityFixQ103
 LootTables.Q103_town_LCM_toolbox_inline8: *rarityFixQ103
 LootTables.Q103_town_LCM_toolbox_inline10: *rarityFixQ103
 LootTables.Q103_town_LCM_toolbox_inline12: *rarityFixQ103
+# Fix incorrect reward being received
+Items.SmasherReward_Q114_Revolver:
+    rewardItems: [ Items.Preset_Overture_Cassidy ]

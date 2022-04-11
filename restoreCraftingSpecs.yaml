@@ -37,7 +37,7 @@ Items.TygerRangedWeaponMod_inline4:
         - Items.Apart_RangedWeaponMod_inline5
         - Items.Apart_RangedWeaponMod_inline6
         - Items.Apart_RangedWeaponMod_inline7
-# Create new vendor inline (Japantown)
+# Create new vendor inline
 Vendors.Apart_TygerRangedWeaponMod_inline0:
     $type: gamedataVendorItem_Record
     forceQuality: Rare
@@ -65,7 +65,7 @@ Items.WraithsRangedWeaponMod_inline3:
         - Items.Apart_RangedWeaponMod_inline5
         - Items.Apart_RangedWeaponMod_inline6
         - Items.Apart_RangedWeaponMod_inline7
-# Create new vendor inline (Japantown)
+# Create new vendor inline
 Vendors.Apart_WraithsRangedWeaponMod_inline0:
     $type: gamedataVendorItem_Record
     forceQuality: Rare
@@ -93,7 +93,7 @@ Items.ValentinosRangedWeaponMod_inline3:
         - Items.Apart_RangedWeaponMod_inline5
         - Items.Apart_RangedWeaponMod_inline6
         - Items.Apart_RangedWeaponMod_inline7
-# Create new vendor inline (Japantown)
+# Create new vendor inline
 Vendors.Apart_ValentinosRangedWeaponMod_inline0:
     $type: gamedataVendorItem_Record
     forceQuality: Rare
@@ -104,3 +104,57 @@ Vendors.Apart_ValentinosRangedWeaponMod_inline0:
 Vendors.hey_gle_gunsmith_01:
     itemStock:
         - !append-once Vendors.Apart_ValentinosRangedWeaponMod_inline0
+### Weakspot Detection Recipe ###
+Items.Apart_Recipe_KiroshiOpticsFragment6:
+    $base: Items.Recipe_KiroshiOpticsBaseFragment
+    craftingResult: Items.Apart_Recipe_KiroshiOpticsFragment6_inline0
+    displayName: LocKey#43408
+    quality: Quality.Random
+    statModifiers: 
+        - Quality.CraftingScaleQuality
+Items.Apart_Recipe_KiroshiOpticsFragment6_inline0:
+    $type: gamedataCraftingResult_Record
+    amount: 1
+    item: Items.KiroshiOpticsFragment6
+Items.KiroshiOpticsFragment6:
+    CraftingData: Items.SimpleModCraftingData
+    quality: Quality.Random
+    OnAttach: 
+        - Items.Apart_KiroshiOpticsFragment6_inline0
+    OnEquip: []
+    statModifierGroups: 
+        - Items.QualityRandomization
+    statModifiers: 
+        - Items.Apart_KiroshiOpticsFragment6_inline2
+        - Items.Apart_KiroshiOpticsFragment6_inline3
+Items.Apart_KiroshiOpticsFragment6_inline0:
+    $type: gamedataGameplayLogicPackage_Record
+    UIData: Items.KiroshiOpticsFragment6_inline1
+Items.Apart_KiroshiOpticsFragment6_inline1:
+    $type: gamedataGameplayLogicPackageUIData_Record
+    localizedDescription: LocKey#43555
+    stats: 
+        - BaseStats.CritChance 
+Items.Apart_KiroshiOpticsFragment6_inline2:
+    $type: gamedataConstantStatModifier_Record
+    modifierType: Additive
+    statType: BaseStats.CritChance
+    value: 1.00000
+Items.Apart_KiroshiOpticsFragment6_inline3:
+    $type: gamedataCombinedStatModifier_Record
+    modifierType: Additive
+    opSymbol: "*"
+    refObject: Self
+    refStat: BaseStats.Quality
+    statType: BaseStats.CritChance
+    value: 1.000000
+# Create new vendor inline
+Vendors.Apart_KiroshiOpticsFragment6_inline0:
+    $type: gamedataVendorItem_Record
+    item: Items.Apart_Recipe_KiroshiOpticsFragment6
+    quantity:
+        - Vendors.IsPresent
+# Add to Viktor Vektor in Little China, Watson
+Vendors.wat_lch_ripperdoc_01:
+    itemStock:
+        - !append-once Vendors.Apart_KiroshiOpticsFragment6_inline0
